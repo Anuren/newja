@@ -14,7 +14,8 @@ build:
 execute:
   stage: execute
   script: /usr/lib/jvm/java-8-openjdk-amd64/bin/java Hello
-  image: docker:latest
+  
+image: docker:latest
 
 variables:
   REPOSITORY_URL: 440718620586.dkr.ecr.us-east-1.amazonaws.com/my_repo
