@@ -14,7 +14,5 @@ build:
 execute:
   stage: execute
   script: /usr/lib/jvm/java-8-openjdk-amd64/bin/java App
-test:
-  stage: test
-  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/java AppTest
-  
+
+
