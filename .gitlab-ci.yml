@@ -6,13 +6,12 @@ stages:
 
 build:
   stage: build
-  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/javac App.java
+  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/javac Hello.java
   artifacts:
     paths:
-     - App.*
+     - Hello.*
 
 execute:
   stage: execute
-  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/java App
-
+  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/java Hello
 
