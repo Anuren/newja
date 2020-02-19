@@ -1,20 +1,3 @@
-image: java:latest
-
-stages:
-  - build
-  - execute
-
-build:
-  stage: build
-  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/javac Hello.java
-  artifacts:
-    paths:
-     - Hello.*
-
-execute:
-  stage: execute
-  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/java Hello
-  
 image: docker:latest
 
 variables:
