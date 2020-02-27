@@ -1,28 +1,16 @@
-image: docker:latest
-
-variables:
-  REPOSITORY_URL: 440718620586.dkr.ecr.us-east-1.amazonaws.com/my_repo
-
-services:
-- docker:dind
-
-before_script:
-  - apk add --no-cache curl jq python py-pip
-  - pip install awscli
+image: java:latest
 
 stages:
   - build
+  - execute
 
 build:
   stage: build
-  script:
-    - $(aws ecr get-login --no-include-email --region us-east-1)
-    - docker build -t $REPOSITORY_URL .
-    - docker push $REPOSITORY_URL
-  only:
-    - master
-  tags:
-    - docker
+  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/javac Hello.java
+  artifacts:
+    paths:
+     - Hello.*
 
-  
-
+execute:
+  stage: execute
+  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/java Hello
