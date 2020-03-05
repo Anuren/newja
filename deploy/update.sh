@@ -5,8 +5,8 @@ set -e
 
 
 
-sudo apt install default-jre
-sudo apt install default-jdk
+sudo apt install default-jre -y
+sudo apt install default-jdk -y
 javac -version
 
 java Hello
