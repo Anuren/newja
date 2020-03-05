@@ -11,7 +11,7 @@ echo "$PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
 # chmod 600 /root/.ssh/id_rsa
 # ** End of alternative approach
 
-chmod a+x deploy_disableHostKeyChecking.sh
+chmod a+x ./deploy/deploy_disableHostKeyChecking.sh
 # disable the host key checking.
 ./deploy/deploy_disableHostKeyChecking.sh
 
