@@ -1,5 +1,7 @@
 image: java:latest
-
+before_script:
+  - 'which ssh-agent || ( apt-get updatey &&  -apt-get install openssh-client -y )'
+  
 stages:
   - build
   - execute
@@ -14,3 +16,12 @@ build:
 execute:
   stage: execute
   script: /usr/lib/jvm/java-8-openjdk-amd64/bin/java Hello
+  
+deploy:dev:
+  stage: deploy
+  script:
+    - bash deploy/deploy.sh
+  only:
+    - master
+
+
