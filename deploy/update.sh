@@ -5,11 +5,17 @@ set -e
 
 
 
-sudo apt install default-jre -y
-sudo apt install default-jdk -y
+#sudo apt install default-jre -y
+#sudo apt install default-jdk -y
+
 javac -version
 
-./java/Hello.java
+#git clone https://gitlab.com/arshiyan6/java.git
+ls -a
+cd java
+echo "hello"
 javac Hello.java
 
 java Hello
+
+
