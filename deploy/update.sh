@@ -2,6 +2,7 @@
 
 # any future command that fails will exit the script
 set -e
+sudo apt-get update
 
 
 
