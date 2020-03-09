@@ -4,14 +4,16 @@
 set -e
 sudo apt-get update
 
-
-
 sudo apt install default-jre -y
-sudo apt install default-jdk -y
+java -version
+
+sudo apt install openjdk-8-jdk -y
 javac -version
 
-/usr/lib/jvm/java-8-openjdk-amd64/bin/javac Hello.java
-./java/Hello.java
+git clone https://gitlab.com/arshiyan6/java.git
+ls -a
+cd java
+echo "hello"
 javac Hello.java
 
 java Hello
