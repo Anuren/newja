@@ -18,11 +18,23 @@ execute:
   stage: execute
   script: /usr/lib/jvm/java-8-openjdk-amd64/bin/java Hello
   
+trigger:
+  stage: trigger
+  script:
+  - "curl --request POST --form token=443a550d88c8dc4508a82ca9d9ee44 --form ref=master https://gitlab.com/api/v4/projects/{17389984}/trigger/pipeline"
+  only:
+  - master
+
+
 deploy:dev:
   stage: deploy
   script:
     - bash deploy/deploy.sh
   only:
     - master
+  dependencies:
+    - execute
+  when: manual
+
 
 
